@@ -10,10 +10,24 @@ on:
     branches: ["main"]
     
 jobs:
-  # name of the pipeline job
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set-up Node
+        uses: actions/setup-node@v1
+        with:
+         node-version: 20.x
+      - name: Install Dependencies
+        run: npm install
+      - name: Lint
+        run: node_modules/eslint/bin/eslint.js -c eslint.config.js script.js
+  
   test:
     # machine in which the job is executed (docker)
     runs-on: ubuntu-latest
+    needs: lint
     # steps of the job
     steps:
       # you can use run commands to execute commands in your VM, for instance, for loggin purposes
