@@ -1,14 +1,17 @@
 {
-  "name": "task-5---roman-number-converter",
+  "name": "roman-converter",
   "version": "1.0.0",
-  "main": "script.js",
+  "description": "Roman numeral converter website with tests",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:headless": "node run-tests.js"
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "mocha": "^11.2.2"
+  "devDependencies": {
+    "chai": "^5.1.2",
+    "http-server": "^14.1.1",
+    "mocha": "^11.1.0",
+    "mocha-chrome": "^2.2.0",
+    "mocha-headless-chrome": "^4.0.0",
+    "puppeteer": "^19.7.5",
+    "eslint": "^9.0"
   }
 }
