@@ -22,11 +22,11 @@ describe('convertIntToRoman', function() {
   });
 
   it('should throw an error for numbers more than 3999', function() {
-    expect(() => convertIntToRoman(4000)).to.throw("Please enter a number between 1 and 3999.");
+    expect(() => convertIntToRoman(4000)).to.throw('Please enter a number between 1 and 3999.');
   });
 
   it('should throw an error for numbers less than 1', function() {
-    expect(() => convertIntToRoman(0)).to.throw("Please enter a number between 1 and 3999.");
+    expect(() => convertIntToRoman(0)).to.throw('Please enter a number between 1 and 3999.');
   });
 });
 
@@ -51,10 +51,10 @@ describe('convertRomanToInt', function() {
       expect(convertRomanToInt('M')).to.equal(1000);
     });
     it('should throw an error for numbers more than 3999', function() {
-        expect(() => convertRomanToInt('MMMM')).to.throw("Invalid Roman Numeral");
+        expect(() => convertRomanToInt('MMMM')).to.throw('Invalid Roman Numeral');
     });
     it('should throw error for rules', function() {
-        expect(() => convertRomanToInt('IIII')).to.throw("Invalid Roman Numeral")
+        expect(() => convertRomanToInt('IIII')).to.throw('Invalid Roman Numeral')
     });
 
     //I don not consider it returning 0 an error when it's an empty string, I tested both just in case
@@ -74,7 +74,7 @@ describe('convertRomanToInt', function() {
         expect(convertRomanToInt('CDXLIV')).to.equal(444);
     });
     it('should throw error for invalid input', function() {
-        expect(() => convertRomanToInt('AB')).to.throw("Invalid Roman Numeral")
+        expect(() => convertRomanToInt('AB')).to.throw('Invalid Roman Numeral')
     });
     
   });
