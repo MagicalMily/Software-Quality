@@ -1,12 +1,12 @@
 // Function to convert Roman to Integer
 function convertRomanToInt(roman) {
     let controller = false;
-    if(typeof roman === "undefined"){
+    if(typeof roman === 'undefined'){
         roman = document.getElementById('romanInput').value.toUpperCase();
         controller = true;
     }
     const romanNumerals = { 
-        "I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000 
+        'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000 
     };
     let total = 0;
     let prevValue = 0;
@@ -16,10 +16,9 @@ function convertRomanToInt(roman) {
             document.getElementById('romanResult').textContent = 'Invalid Roman Numeral';
             document.getElementById('romanResult').classList.add('error');
         }
-        throw new Error("Invalid Roman Numeral")
+        throw new Error('Invalid Roman Numeral')
     }
     
-
     for (let i = roman.length - 1; i >= 0; i--) {
         const currentValue = romanNumerals[roman[i]];
         if (currentValue < prevValue) {
@@ -39,7 +38,7 @@ function convertRomanToInt(roman) {
 // Function to convert Integer to Roman
 function convertIntToRoman(num) {
     let controller = false;
-    if(typeof num === "undefined"){
+    if(typeof num === 'undefined'){
         num = parseInt(document.getElementById('integerInput').value);
         controller = true;
     }
@@ -54,12 +53,10 @@ function convertIntToRoman(num) {
     }
     
     const romanNumerals = [
-        ["M", 1000], ["CM", 900], ["D", 500], ["CD", 400],
-        ["C", 100], ["XC", 90], ["L", 50], ["XL", 40],
-        ["X", 10], ["IX", 9], ["V", 5], ["IV", 4], ["I", 1]
+        ['M', 1000], ['CM', 900], ['D', 500], ['CD', 400],
+        ['C', 100], ['XC', 90], ['L', 50], ['XL', 40],
+        ['X', 10], ['IX', 9], ['V', 5], ['IV', 4], ['I', 1]
     ];
-
-    
 
     for (let [symbol, value] of romanNumerals) {
         while (num >= value) {
