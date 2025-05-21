@@ -1,6 +1,5 @@
 // Function to convert Roman to Integer
 function convertRomanToInt(roman) {
-  
   let controller = false;
   if (typeof roman === 'undefined') {
     roman = document.getElementById('romanInput').value.toUpperCase();
@@ -66,6 +65,6 @@ function convertIntToRoman(num) {
     document.getElementById('integerResult').classList.remove('error');
   }
   
-  gtag('event', 'covertRomanToInt,{ 'Result': result });
+  gtag('event', 'convertIntToRoman,{ 'Result': result });
   return result;
 }
