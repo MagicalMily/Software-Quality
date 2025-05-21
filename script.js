@@ -64,6 +64,6 @@ function convertIntToRoman(num) {
     document.getElementById('integerResult').textContent = result;
     document.getElementById('integerResult').classList.remove('error');
   }
-  gtag('event', 'convertIntToRoman,{ 'Result': result });
+  gtag('event', 'convertIntToRoman',{ 'Result': result });
   return result;
 }
