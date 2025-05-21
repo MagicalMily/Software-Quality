@@ -31,6 +31,19 @@ function convertRomanToInt(roman) {
     document.getElementById('romanResult').classList.remove('error');
   }
 
+  // Safely call gtag when it's available
+  if (typeof gtag === 'function') {
+    gtag('event', 'convertRomanToInt', { 'Result': total });
+  } else {
+    console.log('gtag is not defined yet');
+    // Optional: You can add a retry mechanism here (e.g., call gtag after a short delay)
+    setTimeout(function() {
+      if (typeof gtag === 'function') {
+        gtag('event', 'convertRomanToInt', { 'Result': total });
+      }
+    }, 1000); // Retry after 1 second
+  }
+
   return total;
 }
 
