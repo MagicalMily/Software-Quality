@@ -30,7 +30,7 @@ function convertRomanToInt(roman) {
     document.getElementById('romanResult').textContent = total;
     document.getElementById('romanResult').classList.remove('error');
   }
-  
+
   return total;
 }
 
@@ -64,6 +64,19 @@ function convertIntToRoman(num) {
     document.getElementById('integerResult').textContent = result;
     document.getElementById('integerResult').classList.remove('error');
   }
-  gtag('event', 'convertIntToRoman',{ 'Result': result });
+
+  // Safely call gtag when it's available
+  if (typeof gtag === 'function') {
+    gtag('event', 'convertIntToRoman', { 'Result': result });
+  } else {
+    console.log('gtag is not defined yet');
+    // Optional: You can add a retry mechanism here (e.g., call gtag after a short delay)
+    setTimeout(function() {
+      if (typeof gtag === 'function') {
+        gtag('event', 'convertIntToRoman', { 'Result': result });
+      }
+    }, 1000); // Retry after 1 second
+  }
+
   return result;
 }
